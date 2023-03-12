@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.input-wrapper {
+    padding: 0 20px;
+    box-sizing: border-box;
+
+
+.input-wrapper_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: #282828;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    margin: 0 auto;
+    padding: 20px 0;
+    .input_button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input {
+            background: #282828;
+            border-radius: 5px;
+            padding: 5px;
+            &::placeholder {
+                font-family: 'Abhaya Libre SemiBold';
+                font-style: normal;
+                font-size: 16px;
+                line-height: 28px;
+                color: #F4F4F4; 
+                margin: 0;
+                padding-left: 10px;
+            }
+            &:focus {
+                color: #F4F4F4; 
+            }
+        }
+        button {
+            background: transparent;
+            border: 2px solid #000;
+            color: #F4F4F4;
+            font-size: 14px;
+            padding: 5px;
+            width: 95px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    }
+}
+
+.empty p {
+    font-family: 'Abhaya Libre SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #F4F4F4; 
+    margin-top: 15px;
+}
+
+.todo-list{
+    width: 100%;
+    .todo_logic {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 15px;
+        flex-direction: row-reverse;
+        li {
+            font-family: 'Abhaya Libre SemiBold';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #F4F4F4;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+        }
+        button {
+            background: transparent;
+            border: 2px solid #FF0000;
+            color: #F4F4F4;
+            font-size: 14px;
+            padding: 5px;
+            width: 95px;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+.checked-item {
+    text-decoration: line-through;
+}
+
+$toggle-background-color-on: #10C200;
+$toggle-background-color-off: #366EFF;
+$toggle-control-color: white;
+$toggle-width: 50px;
+$toggle-height: 30px;
+$toggle-gutter: 3px;
+$toggle-radius: 50%;
+$toggle-control-speed: .15s;
+$toggle-control-ease: ease-in;
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: $toggle-width;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &:after {
+      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+    }
+  }
+
+  .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $toggle-height;
+    width: $toggle-width;
+    border-radius: $toggle-radius;
+    background-color: $toggle-background-color-off;
+    transition: background-color $toggle-control-speed $toggle-control-ease;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: $toggle-gutter;
+      top: $toggle-gutter;
+      width: $toggle-control-size;
+      height: $toggle-control-size;
+      border-radius: $toggle-radius;
+      background: $toggle-control-color;
+      transition: left $toggle-control-speed $toggle-control-ease;
+    }
+  }
+}
+
+}
